@@ -1,7 +1,6 @@
 #  Amuseum
 
 ### Your museum to all your Amusements!
--
 
 Amuseum is a project I started for fun, but also a project where I wanted to have a reference to all the best practices that I had been researching and learning  for several months. 
 Now Amuseum is far than complete it is just the start; however, I thought of putting it on Github early on before completion, so that if anyone is interested in the practices used in the project,
