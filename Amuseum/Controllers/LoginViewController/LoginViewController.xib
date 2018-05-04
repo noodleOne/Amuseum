@@ -30,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2sb-xb-xfi">
-                    <rect key="frame" x="16" y="267" width="343" height="133"/>
+                    <rect key="frame" x="16" y="129.5" width="343" height="133"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6K0-cO-KpJ">
                             <rect key="frame" x="0.0" y="0.0" width="343" height="21.5"/>
@@ -59,18 +59,48 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpk-4a-Smf">
-                    <rect key="frame" x="168" y="424" width="38" height="30"/>
+                    <rect key="frame" x="168.5" y="286.5" width="38" height="30"/>
                     <state key="normal" title="Login"/>
                     <connections>
                         <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="y0V-wI-5pU"/>
                     </connections>
                 </button>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Psi-OL-dNO">
+                    <rect key="frame" x="63" y="328.5" width="249.5" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEB-fv-1qu">
+                            <rect key="frame" x="0.0" y="0.0" width="151.5" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jbl-VP-eKY">
+                            <rect key="frame" x="155.5" y="0.0" width="94" height="30"/>
+                            <state key="normal">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Register Here">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="15"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </state>
+                            <connections>
+                                <action selector="registerHereTapped:" destination="-1" eventType="touchUpInside" id="eem-9S-b5X"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Psi-OL-dNO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="933-gP-kD3"/>
                 <constraint firstItem="ncA-cc-ezf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="A7L-Hj-51y"/>
-                <constraint firstItem="2sb-xb-xfi" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="D7H-Nv-BrH"/>
+                <constraint firstItem="Psi-OL-dNO" firstAttribute="top" secondItem="cpk-4a-Smf" secondAttribute="bottom" constant="12" id="LSF-f0-oqs"/>
                 <constraint firstItem="2sb-xb-xfi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Pi2-L4-SOP"/>
+                <constraint firstItem="2sb-xb-xfi" firstAttribute="top" secondItem="ncA-cc-ezf" secondAttribute="bottom" constant="72" id="cvu-a4-eYF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2sb-xb-xfi" secondAttribute="trailing" constant="16" id="fAv-4s-G43"/>
                 <constraint firstItem="cpk-4a-Smf" firstAttribute="top" secondItem="2sb-xb-xfi" secondAttribute="bottom" constant="24" id="h9f-bb-XmL"/>
                 <constraint firstItem="cpk-4a-Smf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lEP-qQ-bby"/>

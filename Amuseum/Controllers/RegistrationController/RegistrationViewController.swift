@@ -23,6 +23,15 @@ class RegistrationViewController: UIViewController, ViewModelBindable {
         setupTextFieldDelegates()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        removePartialCurlTap()
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     // MARK: - View Model Bindable Conformance
     func bindViewModel() {
         var outputs = viewModel.outputs
@@ -60,6 +69,14 @@ class RegistrationViewController: UIViewController, ViewModelBindable {
     private func setupTextFieldDelegates() {
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    private func removePartialCurlTap() {
+        if let gestures = self.view.gestureRecognizers as? [UIGestureRecognizer] {
+            for gesture in gestures {
+                self.view.removeGestureRecognizer(gesture)
+            }
+        }
     }
     
     // MARK: - Helper Methods

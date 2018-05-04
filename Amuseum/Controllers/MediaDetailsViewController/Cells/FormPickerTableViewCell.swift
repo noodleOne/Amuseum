@@ -42,14 +42,12 @@ class FormPickerTableViewCell: UITableViewCell, ViewModelBindable, FormTableView
             UIView.animate(withDuration: 0.25) {
                 self.formTitleLabel.isHidden = true
                 self.formValueLabel.textColor = .blue
-                self.layoutIfNeeded()
             }
         } else {
             pickerHeightConstraint.constant = 0
             UIView.animate(withDuration: 0.25) {
                 self.formTitleLabel.isHidden = false
                 self.formValueLabel.textColor = .lightGray
-                self.layoutIfNeeded()
             }
         }
     }

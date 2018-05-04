@@ -15,6 +15,7 @@
                 <outlet property="emailTextField" destination="RAn-n0-hNt" id="vll-ss-wQ8"/>
                 <outlet property="passwordTextField" destination="At0-7U-IQ8" id="5O2-YY-ZVR"/>
                 <outlet property="registerButton" destination="vdL-hk-HHc" id="4Pw-2j-GSa"/>
+                <outlet property="view" destination="6n0-dt-cbp" id="B6p-Zp-Edh"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BQF-xw-KH7">
-                    <rect key="frame" x="16" y="267" width="343" height="133"/>
+                    <rect key="frame" x="16" y="133" width="343" height="133"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90P-dR-cwG">
                             <rect key="frame" x="0.0" y="0.0" width="343" height="21.5"/>
@@ -58,7 +59,7 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdL-hk-HHc">
-                    <rect key="frame" x="159" y="424" width="57" height="30"/>
+                    <rect key="frame" x="159" y="290" width="57" height="30"/>
                     <state key="normal" title="Register"/>
                     <connections>
                         <action selector="registerTapped:" destination="-1" eventType="touchUpInside" id="GLO-S5-Kp9"/>
@@ -77,7 +78,7 @@
                 <constraint firstItem="BQF-xw-KH7" firstAttribute="leading" secondItem="lKI-5b-uxf" secondAttribute="leading" constant="16" id="2Tj-OY-EL1"/>
                 <constraint firstItem="vdL-hk-HHc" firstAttribute="top" secondItem="BQF-xw-KH7" secondAttribute="bottom" constant="24" id="4Rz-BB-oVC"/>
                 <constraint firstItem="lKI-5b-uxf" firstAttribute="trailing" secondItem="BQF-xw-KH7" secondAttribute="trailing" constant="16" id="64r-tg-LPb"/>
-                <constraint firstItem="BQF-xw-KH7" firstAttribute="centerY" secondItem="6n0-dt-cbp" secondAttribute="centerY" id="82y-pK-kV3"/>
+                <constraint firstItem="BQF-xw-KH7" firstAttribute="top" secondItem="aR3-Jw-LZN" secondAttribute="bottom" constant="72" id="94l-zC-QJl"/>
                 <constraint firstItem="aR3-Jw-LZN" firstAttribute="leading" secondItem="lKI-5b-uxf" secondAttribute="leading" constant="22" id="Byk-T9-ueP"/>
                 <constraint firstItem="BQF-xw-KH7" firstAttribute="centerX" secondItem="6n0-dt-cbp" secondAttribute="centerX" id="CJV-W0-IXO"/>
                 <constraint firstItem="Ozl-uz-CcX" firstAttribute="top" secondItem="lKI-5b-uxf" secondAttribute="top" constant="16" id="aVO-9K-Npw"/>

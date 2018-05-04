@@ -23,6 +23,11 @@ class LoginViewController: UIViewController, ViewModelBindable {
         setupTextFieldDelegates()
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    // MARK: - View Model Binding
     internal func bindViewModel() {
         var outputs = viewModel.outputs
         
@@ -71,7 +76,10 @@ class LoginViewController: UIViewController, ViewModelBindable {
         viewModel.login()
     }
     
-
+    @IBAction func registerHereTapped(_ sender: Any) {
+        present(Scene.registration.viewController(), animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - UITextFieldDelegate
