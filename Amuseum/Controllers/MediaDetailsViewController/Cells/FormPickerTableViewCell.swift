@@ -8,10 +8,7 @@
 
 import UIKit
 
-class FormPickerTableViewCell: UITableViewCell, ViewModelBindable, RepresentableConfigurable {
-    
-    // MARK: - RepresentableConfigurable Associated Type
-    typealias Representable = FormTableViewCellRepresentable
+class FormPickerTableViewCell: UITableViewCell, ViewModelBindable, FormTableViewCellConfigurable {
     
     // MARK: - View Model
     var viewModel: FormPickerTableViewCellViewModel!
@@ -20,6 +17,7 @@ class FormPickerTableViewCell: UITableViewCell, ViewModelBindable, Representable
     private var pickerRows: [String] = []
     
     // MARK: - Outlets
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var formValueLabel: UILabel!
     @IBOutlet weak var formTitleLabel: UILabel!
     @IBOutlet weak var pickerHeightConstraint: NSLayoutConstraint!
@@ -40,12 +38,18 @@ class FormPickerTableViewCell: UITableViewCell, ViewModelBindable, Representable
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
-            UIView.animate(withDuration: 0.3) {
-                self.pickerHeightConstraint.constant = 300
+            pickerHeightConstraint.constant = 150
+            UIView.animate(withDuration: 0.25) {
+                self.formTitleLabel.isHidden = true
+                self.formValueLabel.textColor = .blue
+                self.layoutIfNeeded()
             }
         } else {
+            pickerHeightConstraint.constant = 0
             UIView.animate(withDuration: 0.25) {
-                self.pickerHeightConstraint.constant = 0
+                self.formTitleLabel.isHidden = false
+                self.formValueLabel.textColor = .lightGray
+                self.layoutIfNeeded()
             }
         }
     }
@@ -83,7 +87,7 @@ extension FormPickerTableViewCell: UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        formValueLabel.text = pickerRows[row]
     }
     
 }

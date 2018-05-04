@@ -8,10 +8,7 @@
 
 import UIKit
 
-class FormTableViewCell: UITableViewCell, ViewModelBindable, RepresentableConfigurable {
-    
-    // MARK: - RepresentableConfigurable Associated Type
-    typealias Representable = FormTableViewCellRepresentable
+class FormTableViewCell: UITableViewCell, ViewModelBindable, FormTableViewCellConfigurable {
     
     // MARK: - View Model
     var viewModel: FormTableViewCellViewModel!
@@ -36,5 +33,5 @@ class FormTableViewCell: UITableViewCell, ViewModelBindable, RepresentableConfig
         formTitleLabel.font = representable.formTitleFont
         formTitleLabel.textColor = representable.formTitleColor
     }
-    
+
 }

@@ -20,13 +20,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joP-Jm-irg">
-                        <rect key="frame" x="16" y="8" width="42" height="27.5"/>
+                        <rect key="frame" x="20" y="8" width="42" height="27.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NzY-vu-M8w">
-                        <rect key="frame" x="70" y="8" width="238" height="28"/>
+                        <rect key="frame" x="74" y="8" width="234" height="28"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
@@ -37,7 +37,7 @@
                     <constraint firstItem="NzY-vu-M8w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Nah-lK-05o"/>
                     <constraint firstAttribute="bottom" secondItem="joP-Jm-irg" secondAttribute="bottom" constant="8" id="P80-1V-cHb"/>
                     <constraint firstItem="joP-Jm-irg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="RQn-aQ-80F"/>
-                    <constraint firstItem="joP-Jm-irg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="car-G1-VYE"/>
+                    <constraint firstItem="joP-Jm-irg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="car-G1-VYE"/>
                     <constraint firstAttribute="bottom" secondItem="NzY-vu-M8w" secondAttribute="bottom" constant="8" id="kLJ-Mo-prg"/>
                     <constraint firstItem="NzY-vu-M8w" firstAttribute="leading" secondItem="joP-Jm-irg" secondAttribute="trailing" constant="12" id="stJ-9g-VAb"/>
                 </constraints>

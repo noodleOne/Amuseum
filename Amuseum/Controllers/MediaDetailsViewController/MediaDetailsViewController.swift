@@ -21,6 +21,8 @@ class MediaDetailsViewController: UIViewController, ViewModelBindable, UITableVi
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.allowsMultipleSelection = true
+            tableView.tableFooterView = UIView(frame: .zero)
             tableView.register(UINib(nibName: FormTableViewCell.className, bundle: nil), forCellReuseIdentifier: FormTableViewCell.className)
             tableView.register(UINib(nibName: FormPickerTableViewCell.className, bundle: nil), forCellReuseIdentifier: FormPickerTableViewCell.className)
         }
@@ -58,7 +60,26 @@ class MediaDetailsViewController: UIViewController, ViewModelBindable, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = rows[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseIdentifier, for: indexPath)
+        if let configurable = cell as? FormTableViewCellConfigurable {
+            configurable.configure(with: row)
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // This allows the update of the row heights
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        let row = rows[indexPath.row]
+        return row.options != nil
     }
     
 }

@@ -58,6 +58,7 @@
 		9994CFF3208E880F00440AC0 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994CFF1208E880F00440AC0 /* HistoryViewController.swift */; };
 		9994CFF4208E880F00440AC0 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9994CFF2208E880F00440AC0 /* HistoryViewController.xib */; };
 		9994CFF6208E885000440AC0 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994CFF5208E885000440AC0 /* HistoryViewModel.swift */; };
+		99B64180209CF0D4004147FB /* FormTableViewCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B6417F209CF0D4004147FB /* FormTableViewCellConfigurable.swift */; };
 		99DC0A0E209A6C1A00489658 /* FormTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC0A0D209A6C1A00489658 /* FormTableViewCellViewModel.swift */; };
 		99DC0A10209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC0A0F209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift */; };
 		99DC0A13209A6CF300489658 /* FormTableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC0A12209A6CF300489658 /* FormTableViewProvider.swift */; };
@@ -153,6 +154,7 @@
 		9994CFF1208E880F00440AC0 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		9994CFF2208E880F00440AC0 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 		9994CFF5208E885000440AC0 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		99B6417F209CF0D4004147FB /* FormTableViewCellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCellConfigurable.swift; sourceTree = "<group>"; };
 		99DC0A0D209A6C1A00489658 /* FormTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		99DC0A0F209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPickerTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		99DC0A12209A6CF300489658 /* FormTableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewProvider.swift; sourceTree = "<group>"; };
@@ -228,10 +230,10 @@
 		9914C042209A331B009BA97E /* MediaDetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9914C047209A3376009BA97E /* Cells */,
 				9914C043209A3352009BA97E /* MediaDetailsViewController.swift */,
-				9914C044209A3352009BA97E /* MediaDetailsViewController.xib */,
 				9914C050209A364F009BA97E /* MediaDetailsViewModel.swift */,
+				9914C044209A3352009BA97E /* MediaDetailsViewController.xib */,
+				9914C047209A3376009BA97E /* Cells */,
 				99DC0A11209A6CE400489658 /* TableViewProvider */,
 			);
 			path = MediaDetailsViewController;
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				9914C054209A651B009BA97E /* FormTableViewCellRepresentable.swift */,
+				99B6417F209CF0D4004147FB /* FormTableViewCellConfigurable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 				9969795C208B3FC700844FD7 /* RegistrationViewController.swift in Sources */,
 				992C2EA4208A6AF500B4C4F6 /* SplashViewController.swift in Sources */,
 				99FC562C20950A73007EFEBB /* Article.swift in Sources */,
+				99B64180209CF0D4004147FB /* FormTableViewCellConfigurable.swift in Sources */,
 				99FE2AF4208EF5A8007E834C /* MusicGenre.swift in Sources */,
 				9955817C2094FD4B003C57A2 /* DictionaryExtension.swift in Sources */,
 				99697952208B30C100844FD7 /* UITableViewCellRepresentableConfigurable.swift in Sources */,

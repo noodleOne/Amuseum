@@ -10,7 +10,7 @@ import UIKit
 
 protocol UITableViewCellRepresentableConfigurable {
     
-    func configure(with representable: DefaultUITableViewCellRepresentable)
+    func configure(with defaultRepresentable: DefaultUITableViewCellRepresentable)
     
 }
 
