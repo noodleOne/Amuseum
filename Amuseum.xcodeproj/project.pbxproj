@@ -10,6 +10,14 @@
 		7127BC138328367EA002B80F /* Pods_AmuseumUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9ABE9FFBA36B4F70EFA2F9B /* Pods_AmuseumUITests.framework */; };
 		7DB0C578429255613E6FACDA /* Pods_AmuseumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B8CD6C80C9169C6F8D8786 /* Pods_AmuseumTests.framework */; };
 		7E21DBB49A598C4311B409EE /* Pods_Amuseum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BADB347FB6A73348977C4F /* Pods_Amuseum.framework */; };
+		9914C045209A3352009BA97E /* MediaDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914C043209A3352009BA97E /* MediaDetailsViewController.swift */; };
+		9914C046209A3352009BA97E /* MediaDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914C044209A3352009BA97E /* MediaDetailsViewController.xib */; };
+		9914C04A209A33AA009BA97E /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914C048209A33AA009BA97E /* FormTableViewCell.swift */; };
+		9914C04B209A33AA009BA97E /* FormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914C049209A33AA009BA97E /* FormTableViewCell.xib */; };
+		9914C04E209A34B4009BA97E /* FormPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914C04C209A34B4009BA97E /* FormPickerTableViewCell.swift */; };
+		9914C04F209A34B4009BA97E /* FormPickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914C04D209A34B4009BA97E /* FormPickerTableViewCell.xib */; };
+		9914C051209A364F009BA97E /* MediaDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914C050209A364F009BA97E /* MediaDetailsViewModel.swift */; };
+		9914C055209A651B009BA97E /* FormTableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914C054209A651B009BA97E /* FormTableViewCellRepresentable.swift */; };
 		9915BD502095C48500CE8960 /* HistoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9915BD4F2095C48500CE8960 /* HistoryCellViewModel.swift */; };
 		991F15242095B2ED00C1C662 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F15232095B2ED00C1C662 /* Document.swift */; };
 		9926BAF0208B4AC0002C0FB7 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926BAEF208B4AC0002C0FB7 /* SplashViewModel.swift */; };
@@ -40,10 +48,9 @@
 		99697942208B2A7F00844FD7 /* RawRepresentableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697941208B2A7F00844FD7 /* RawRepresentableExtension.swift */; };
 		9969794A208B2CC100844FD7 /* EntertainmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697949208B2CC100844FD7 /* EntertainmentType.swift */; };
 		9969794D208B2F1D00844FD7 /* HomeViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969794C208B2F1D00844FD7 /* HomeViewCellViewModel.swift */; };
-		99697950208B2F9900844FD7 /* UITableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969794F208B2F9900844FD7 /* UITableViewCellRepresentable.swift */; };
+		99697950208B2F9900844FD7 /* DefaultUITableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969794F208B2F9900844FD7 /* DefaultUITableViewCellRepresentable.swift */; };
 		99697952208B30C100844FD7 /* UITableViewCellRepresentableConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697951208B30C100844FD7 /* UITableViewCellRepresentableConfigurable.swift */; };
 		99697956208B338700844FD7 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697955208B338700844FD7 /* ColorExtensions.swift */; };
-		99697958208B379E00844FD7 /* TableViewDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99697957208B379E00844FD7 /* TableViewDataSourceProvider.swift */; };
 		9969795C208B3FC700844FD7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969795A208B3FC700844FD7 /* RegistrationViewController.swift */; };
 		9969795D208B3FC700844FD7 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9969795B208B3FC700844FD7 /* RegistrationViewController.xib */; };
 		9969795F208B409200844FD7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969795E208B409200844FD7 /* RegistrationViewModel.swift */; };
@@ -51,6 +58,10 @@
 		9994CFF3208E880F00440AC0 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994CFF1208E880F00440AC0 /* HistoryViewController.swift */; };
 		9994CFF4208E880F00440AC0 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9994CFF2208E880F00440AC0 /* HistoryViewController.xib */; };
 		9994CFF6208E885000440AC0 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994CFF5208E885000440AC0 /* HistoryViewModel.swift */; };
+		99DC0A0E209A6C1A00489658 /* FormTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC0A0D209A6C1A00489658 /* FormTableViewCellViewModel.swift */; };
+		99DC0A10209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC0A0F209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift */; };
+		99DC0A13209A6CF300489658 /* FormTableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC0A12209A6CF300489658 /* FormTableViewProvider.swift */; };
+		99DC0A15209ADDBE00489658 /* RepresentableConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC0A14209ADDBE00489658 /* RepresentableConfigurable.swift */; };
 		99DDE32D208A9D3B00098E17 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DDE32C208A9D3B00098E17 /* Scene.swift */; };
 		99DDE331208AA17600098E17 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DDE32F208AA17600098E17 /* HomeViewController.swift */; };
 		99DDE332208AA17600098E17 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DDE330208AA17600098E17 /* HomeViewController.xib */; };
@@ -88,6 +99,14 @@
 		56A61339C104B78B244D66A0 /* Pods-AmuseumUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmuseumUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmuseumUITests/Pods-AmuseumUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5704085AA9A07E2DCC66223E /* Pods-AmuseumUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmuseumUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmuseumUITests/Pods-AmuseumUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8BF7C41194532CEC18D7908D /* Pods-Amuseum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amuseum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Amuseum/Pods-Amuseum.debug.xcconfig"; sourceTree = "<group>"; };
+		9914C043209A3352009BA97E /* MediaDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsViewController.swift; sourceTree = "<group>"; };
+		9914C044209A3352009BA97E /* MediaDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaDetailsViewController.xib; sourceTree = "<group>"; };
+		9914C048209A33AA009BA97E /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
+		9914C049209A33AA009BA97E /* FormTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormTableViewCell.xib; sourceTree = "<group>"; };
+		9914C04C209A34B4009BA97E /* FormPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPickerTableViewCell.swift; sourceTree = "<group>"; };
+		9914C04D209A34B4009BA97E /* FormPickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormPickerTableViewCell.xib; sourceTree = "<group>"; };
+		9914C050209A364F009BA97E /* MediaDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsViewModel.swift; sourceTree = "<group>"; };
+		9914C054209A651B009BA97E /* FormTableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCellRepresentable.swift; sourceTree = "<group>"; };
 		9915BD4F2095C48500CE8960 /* HistoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCellViewModel.swift; sourceTree = "<group>"; };
 		991F15232095B2ED00C1C662 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		9926BAEF208B4AC0002C0FB7 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -124,10 +143,9 @@
 		99697941208B2A7F00844FD7 /* RawRepresentableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawRepresentableExtension.swift; sourceTree = "<group>"; };
 		99697949208B2CC100844FD7 /* EntertainmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntertainmentType.swift; sourceTree = "<group>"; };
 		9969794C208B2F1D00844FD7 /* HomeViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCellViewModel.swift; sourceTree = "<group>"; };
-		9969794F208B2F9900844FD7 /* UITableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellRepresentable.swift; sourceTree = "<group>"; };
+		9969794F208B2F9900844FD7 /* DefaultUITableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUITableViewCellRepresentable.swift; sourceTree = "<group>"; };
 		99697951208B30C100844FD7 /* UITableViewCellRepresentableConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellRepresentableConfigurable.swift; sourceTree = "<group>"; };
 		99697955208B338700844FD7 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
-		99697957208B379E00844FD7 /* TableViewDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceProvider.swift; sourceTree = "<group>"; };
 		9969795A208B3FC700844FD7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		9969795B208B3FC700844FD7 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		9969795E208B409200844FD7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -135,6 +153,10 @@
 		9994CFF1208E880F00440AC0 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		9994CFF2208E880F00440AC0 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 		9994CFF5208E885000440AC0 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		99DC0A0D209A6C1A00489658 /* FormTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		99DC0A0F209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPickerTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		99DC0A12209A6CF300489658 /* FormTableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewProvider.swift; sourceTree = "<group>"; };
+		99DC0A14209ADDBE00489658 /* RepresentableConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableConfigurable.swift; sourceTree = "<group>"; };
 		99DDE32C208A9D3B00098E17 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		99DDE32F208AA17600098E17 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		99DDE330208AA17600098E17 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -203,6 +225,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9914C042209A331B009BA97E /* MediaDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9914C047209A3376009BA97E /* Cells */,
+				9914C043209A3352009BA97E /* MediaDetailsViewController.swift */,
+				9914C044209A3352009BA97E /* MediaDetailsViewController.xib */,
+				9914C050209A364F009BA97E /* MediaDetailsViewModel.swift */,
+				99DC0A11209A6CE400489658 /* TableViewProvider */,
+			);
+			path = MediaDetailsViewController;
+			sourceTree = "<group>";
+		};
+		9914C047209A3376009BA97E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9914C04C209A34B4009BA97E /* FormPickerTableViewCell.swift */,
+				9914C04D209A34B4009BA97E /* FormPickerTableViewCell.xib */,
+				9914C048209A33AA009BA97E /* FormTableViewCell.swift */,
+				9914C049209A33AA009BA97E /* FormTableViewCell.xib */,
+				9914C053209A6505009BA97E /* Protocol */,
+				99DC0A0C209A6C0000489658 /* ViewModels */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9914C053209A6505009BA97E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9914C054209A651B009BA97E /* FormTableViewCellRepresentable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		9915BD4E2095C46500CE8960 /* CellViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +277,7 @@
 		992C2EA0208A6AD400B4C4F6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9914C042209A331B009BA97E /* MediaDetailsViewController */,
 				9994CFF0208E87BD00440AC0 /* HistoryViewController */,
 				99DDE32E208AA16000098E17 /* HomeViewController */,
 				992C2EA9208A6DB200B4C4F6 /* LoginViewController */,
@@ -264,9 +320,9 @@
 		992C2EB1208A727900B4C4F6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				9969794E208B2F8600844FD7 /* UITableViewCellProtocols */,
+				99DC0A14209ADDBE00489658 /* RepresentableConfigurable.swift */,
 				992C2EB2208A728E00B4C4F6 /* ViewModelBindable.swift */,
-				99697957208B379E00844FD7 /* TableViewDataSourceProvider.swift */,
+				9969794E208B2F8600844FD7 /* UITableViewCellProtocols */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -311,14 +367,14 @@
 		992FEE9A208A635500FE2F03 /* Amuseum */ = {
 			isa = PBXGroup;
 			children = (
-				995EE7AB2092F357003A60F6 /* Firebase */,
-				99DDE32B208A9CE800098E17 /* Scene */,
+				992FEE9B208A635500FE2F03 /* AppDelegate.swift */,
 				992C2EB0208A726C00B4C4F6 /* Commons */,
 				992C2EA0208A6AD400B4C4F6 /* Controllers */,
+				995EE7AB2092F357003A60F6 /* Firebase */,
 				99697948208B2CA500844FD7 /* Models */,
 				992FEEC9208A63A000FE2F03 /* Resources */,
+				99DDE32B208A9CE800098E17 /* Scene */,
 				992FEECA208A63B300FE2F03 /* Storyboards */,
-				992FEE9B208A635500FE2F03 /* AppDelegate.swift */,
 			);
 			path = Amuseum;
 			sourceTree = "<group>";
@@ -421,7 +477,7 @@
 		9969794E208B2F8600844FD7 /* UITableViewCellProtocols */ = {
 			isa = PBXGroup;
 			children = (
-				9969794F208B2F9900844FD7 /* UITableViewCellRepresentable.swift */,
+				9969794F208B2F9900844FD7 /* DefaultUITableViewCellRepresentable.swift */,
 				99697951208B30C100844FD7 /* UITableViewCellRepresentableConfigurable.swift */,
 			);
 			path = UITableViewCellProtocols;
@@ -446,6 +502,23 @@
 				9994CFF5208E885000440AC0 /* HistoryViewModel.swift */,
 			);
 			path = HistoryViewController;
+			sourceTree = "<group>";
+		};
+		99DC0A0C209A6C0000489658 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				99DC0A0D209A6C1A00489658 /* FormTableViewCellViewModel.swift */,
+				99DC0A0F209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		99DC0A11209A6CE400489658 /* TableViewProvider */ = {
+			isa = PBXGroup;
+			children = (
+				99DC0A12209A6CF300489658 /* FormTableViewProvider.swift */,
+			);
+			path = TableViewProvider;
 			sourceTree = "<group>";
 		};
 		99DDE32B208A9CE800098E17 /* Scene */ = {
@@ -590,6 +663,9 @@
 				9969795D208B3FC700844FD7 /* RegistrationViewController.xib in Resources */,
 				992FEEA6208A635600FE2F03 /* LaunchScreen.storyboard in Resources */,
 				992FEEA3208A635600FE2F03 /* Assets.xcassets in Resources */,
+				9914C046209A3352009BA97E /* MediaDetailsViewController.xib in Resources */,
+				9914C04B209A33AA009BA97E /* FormTableViewCell.xib in Resources */,
+				9914C04F209A34B4009BA97E /* FormPickerTableViewCell.xib in Resources */,
 				997815F920979DC200C37908 /* LICENSE in Resources */,
 				995E649D208A982C00BD8F56 /* Localizables.strings in Resources */,
 				9994CFF4208E880F00440AC0 /* HistoryViewController.xib in Resources */,
@@ -715,19 +791,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9914C055209A651B009BA97E /* FormTableViewCellRepresentable.swift in Sources */,
 				99697956208B338700844FD7 /* ColorExtensions.swift in Sources */,
 				9994CFF3208E880F00440AC0 /* HistoryViewController.swift in Sources */,
 				995E6496208A96A100BD8F56 /* NSObjectExtension.swift in Sources */,
 				9969794D208B2F1D00844FD7 /* HomeViewCellViewModel.swift in Sources */,
 				99FE2AEB208EF19E007E834C /* MediaObject.swift in Sources */,
-				99697950208B2F9900844FD7 /* UITableViewCellRepresentable.swift in Sources */,
+				9914C045209A3352009BA97E /* MediaDetailsViewController.swift in Sources */,
+				99697950208B2F9900844FD7 /* DefaultUITableViewCellRepresentable.swift in Sources */,
+				99DC0A0E209A6C1A00489658 /* FormTableViewCellViewModel.swift in Sources */,
 				992C2EBC208A892D00B4C4F6 /* StringExtensions.swift in Sources */,
+				9914C051209A364F009BA97E /* MediaDetailsViewModel.swift in Sources */,
 				99DDE32D208A9D3B00098E17 /* Scene.swift in Sources */,
 				9955818020950288003C57A2 /* Media.swift in Sources */,
 				995EE7AF2092F3CC003A60F6 /* FirebaseConstants.swift in Sources */,
 				9994CFF6208E885000440AC0 /* HistoryViewModel.swift in Sources */,
 				9915BD502095C48500CE8960 /* HistoryCellViewModel.swift in Sources */,
-				99697958208B379E00844FD7 /* TableViewDataSourceProvider.swift in Sources */,
+				9914C04A209A33AA009BA97E /* FormTableViewCell.swift in Sources */,
 				995E649B208A97FC00BD8F56 /* StringConstants.swift in Sources */,
 				99FE2AF2208EF55E007E834C /* MusicObject.swift in Sources */,
 				99558186209504A2003C57A2 /* Movie.swift in Sources */,
@@ -741,8 +821,11 @@
 				99DDE334208AA1A500098E17 /* HomeViewModel.swift in Sources */,
 				99FC562A20950983007EFEBB /* Book.swift in Sources */,
 				9955818A2095055F003C57A2 /* Music.swift in Sources */,
+				99DC0A13209A6CF300489658 /* FormTableViewProvider.swift in Sources */,
 				99DDE331208AA17600098E17 /* HomeViewController.swift in Sources */,
 				9969794A208B2CC100844FD7 /* EntertainmentType.swift in Sources */,
+				99DC0A10209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift in Sources */,
+				99DC0A15209ADDBE00489658 /* RepresentableConfigurable.swift in Sources */,
 				9926BAF0208B4AC0002C0FB7 /* SplashViewModel.swift in Sources */,
 				9969795C208B3FC700844FD7 /* RegistrationViewController.swift in Sources */,
 				992C2EA4208A6AF500B4C4F6 /* SplashViewController.swift in Sources */,
@@ -752,6 +835,7 @@
 				99697952208B30C100844FD7 /* UITableViewCellRepresentableConfigurable.swift in Sources */,
 				99697942208B2A7F00844FD7 /* RawRepresentableExtension.swift in Sources */,
 				991F15242095B2ED00C1C662 /* Document.swift in Sources */,
+				9914C04E209A34B4009BA97E /* FormPickerTableViewCell.swift in Sources */,
 				992C2EB3208A728E00B4C4F6 /* ViewModelBindable.swift in Sources */,
 				99FE2AED208EF1DF007E834C /* MovieGenre.swift in Sources */,
 				992C2EAF208A6F9C00B4C4F6 /* LoginViewModel.swift in Sources */,

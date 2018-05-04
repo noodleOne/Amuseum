@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol UITableViewCellRepresentable {
+/// This protocol acts as a Datasource to the default UIKIt
+/// UITableViewCell
+protocol DefaultUITableViewCellRepresentable {
     
     var font: UIFont { get }
     var title: String { get }

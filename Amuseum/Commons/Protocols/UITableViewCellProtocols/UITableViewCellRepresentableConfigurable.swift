@@ -10,17 +10,17 @@ import UIKit
 
 protocol UITableViewCellRepresentableConfigurable {
     
-    func configure(with representable: UITableViewCellRepresentable)
+    func configure(with representable: DefaultUITableViewCellRepresentable)
     
 }
 
 extension UITableViewCell: UITableViewCellRepresentableConfigurable {
     
-    func configure(with representable: UITableViewCellRepresentable) {
-        textLabel?.font = representable.font
-        textLabel?.text = representable.title
-        accessoryType = representable.accessoryType
-        backgroundColor = representable.backgroundColor
+    func configure(with defaultRepresentable: DefaultUITableViewCellRepresentable) {
+        textLabel?.font = defaultRepresentable.font
+        textLabel?.text = defaultRepresentable.title
+        accessoryType = defaultRepresentable.accessoryType
+        backgroundColor = defaultRepresentable.backgroundColor
     }
     
 }

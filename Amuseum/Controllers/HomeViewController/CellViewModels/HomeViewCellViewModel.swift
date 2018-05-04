@@ -18,7 +18,7 @@ class HomeViewCellViewModel {
     
 }
 
-extension HomeViewCellViewModel: UITableViewCellRepresentable {
+extension HomeViewCellViewModel: DefaultUITableViewCellRepresentable {
     
     var font: UIFont {
         return .systemFont(ofSize: 16.0, weight: .medium)

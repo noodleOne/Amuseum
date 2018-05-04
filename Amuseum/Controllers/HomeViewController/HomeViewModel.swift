@@ -8,9 +8,9 @@
 
 import UIKit
 
-class HomeViewModel: TableViewDataSourceProvider {
+class HomeViewModel {
 
-    var viewModels: [UITableViewCellRepresentable] {
+    var cellRepresentables: [DefaultUITableViewCellRepresentable] {
         return _viewModels
     }
     
@@ -19,6 +19,18 @@ class HomeViewModel: TableViewDataSourceProvider {
             return HomeViewCellViewModel(entertainmentType: $0)
         })
     }()
+    
+    func numberOfItems() -> Int {
+        return _viewModels.count
+    }
+    
+    func numberOfSections() -> Int {
+        return 1
+    }
+    
+    func cellViewModel(for indexPath: IndexPath) -> DefaultUITableViewCellRepresentable {
+        return cellRepresentables[indexPath.row]
+    }
     
     func action(for indexPath: IndexPath) -> UIViewController {
         return Scene.history(_viewModels[indexPath.row].entertainmentType).viewController()

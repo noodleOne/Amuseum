@@ -15,6 +15,9 @@ enum Scene {
     case registration
     case home
     case history(EntertainmentType)
+    // Can't declare second parameter to be of type Media since Media has an
+    // associated value and can't be used. Best solution is to have as Any and cast to appropriate type
+    case mediaDetails(EntertainmentType, Any)
     
     func viewController() -> UIViewController {
         switch self {
@@ -40,26 +43,43 @@ enum Scene {
             let navigationController = UINavigationController(rootViewController: vc)
             return navigationController
         case .history(let entertainmentType):
-            var vc: UIViewController
+            var vc = HistoryViewController()
             switch entertainmentType {
             case .movie, .series:
-                vc = HistoryViewController<Movie>()
-                var newVc = vc as! HistoryViewController<Movie>
-                newVc.bind(to: HistoryViewModel(entertainmentType: entertainmentType))
+                vc.bind(to: HistoryViewModel<Movie>(entertainmentType: entertainmentType))
             case .music:
-                vc = HistoryViewController<Music>()
-                var newVc = vc as! HistoryViewController<Music>
-                newVc.bind(to: HistoryViewModel(entertainmentType: entertainmentType))
+                vc.bind(to: HistoryViewModel<Music>(entertainmentType: entertainmentType))
             case .books:
-                vc = HistoryViewController<Book>()
-                var newVc = vc as! HistoryViewController<Book>
-                newVc.bind(to: HistoryViewModel(entertainmentType: entertainmentType))
+                vc.bind(to: HistoryViewModel<Book>(entertainmentType: entertainmentType))
             case .articles:
-                vc = HistoryViewController<Article>()
-                var newVc = vc as! HistoryViewController<Article>
-                newVc.bind(to: HistoryViewModel(entertainmentType: entertainmentType))
+                vc.bind(to: HistoryViewModel<Article>(entertainmentType: entertainmentType))
             }
             vc.title = entertainmentType.rawValue.capitalizingFirstLetter()
+            return vc
+        case .mediaDetails(let entertainmentType, let model):
+            var vc = MediaDetailsViewController(rows: FormTableViewProvider(entertainmentType: entertainmentType).getRows())
+            switch entertainmentType {
+            case .movie, .series:
+                guard let movie = model as? Movie else {
+                    fatalError("Didn't pass a movie object while trying to instantiate movie MediaDetailsViewController")
+                }
+                vc.bind(to: MediaDetailsViewModel<Movie>(model: movie, entertainmentType: entertainmentType))
+            case .music:
+                guard let music = model as? Music else {
+                    fatalError("Didn't pass a Music object while trying to instantiate Music MediaDetailsViewController")
+                }
+                vc.bind(to: MediaDetailsViewModel<Music>(model: music, entertainmentType: entertainmentType))
+            case .books:
+                guard let book = model as? Book else {
+                    fatalError("Didn't pass a Book object while trying to instantiate Book MediaDetailsViewController")
+                }
+                vc.bind(to: MediaDetailsViewModel<Book>(model: book, entertainmentType: entertainmentType))
+            case .articles:
+                guard let article = model as? Article else {
+                    fatalError("Didn't pass a Article object while trying to instantiate Article MediaDetailsViewController")
+                }
+                vc.bind(to: MediaDetailsViewModel<Article>(model: article, entertainmentType: entertainmentType))
+            }
             return vc
         }
     }

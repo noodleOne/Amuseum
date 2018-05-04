@@ -10,6 +10,21 @@ import Firebase
 import Foundation
 import CodableFirebase
 
+
+/// Protocol to abstract away from the HistoryViewController the Generic parameter of the HistoryViewModel
+protocol HistoryViewModelDatasource: HistoryViewModelOutput {
+    
+    func numberOfSections() -> Int
+    
+    func numberOfItems(forSection section: Int) -> Int
+    
+    func cellViewModel(for indexPath: IndexPath) -> DefaultUITableViewCellRepresentable
+    
+    func didSelectAction(for indexPath: IndexPath) -> UIViewController
+    
+}
+
+/// Protocol that provides the outputs to the HistoryViewController
 protocol HistoryViewModelOutput {
     
     typealias DataUpdates = ((_ addedIndexes: [IndexPath]?, _ modifiedIndexes: [IndexPath]?, _ removedIndexes: [IndexPath]?) -> Void)?
@@ -17,9 +32,9 @@ protocol HistoryViewModelOutput {
     var dataUpdates: DataUpdates { get set }
 }
 
-class HistoryViewModel<Model:Media>: HistoryViewModelOutput {
+class HistoryViewModel<Model:Media>: HistoryViewModelDatasource {
     
-    // MARK: - Outputs
+    // MARK: - HistoryViewModel Output Conformance
     var dataUpdates: HistoryViewModelOutput.DataUpdates {
         didSet {
             getMedias()
@@ -28,7 +43,7 @@ class HistoryViewModel<Model:Media>: HistoryViewModelOutput {
     
     // MARK: - Properties
     private let entertainmentType: EntertainmentType
-    private var cellViewModels: [UITableViewCellRepresentable] = []
+    private var cellViewModels: [HistoryCellViewModel<Model>] = []
     
     // MARK: - Firebase
     private lazy var mediaCollection = Firestore.firestore().collection(FirebaseManager.CollectionNames.media.name)
@@ -76,7 +91,7 @@ class HistoryViewModel<Model:Media>: HistoryViewModelOutput {
     
 }
 
-// MARK: - TableView Provider Functions
+// MARK: - HistoryViewModelDatasource Protocol Conformance
 extension HistoryViewModel {
     
     func numberOfSections() -> Int {
@@ -87,8 +102,12 @@ extension HistoryViewModel {
         return cellViewModels.count
     }
     
-    func item(forIndexPath indexPath: IndexPath) -> UITableViewCellRepresentable {
+    func cellViewModel(for indexPath: IndexPath) -> DefaultUITableViewCellRepresentable {
         return cellViewModels[indexPath.row]
+    }
+    
+    func didSelectAction(for indexPath: IndexPath) -> UIViewController {
+        return Scene.mediaDetails(entertainmentType, cellViewModels[indexPath.row].model).viewController()
     }
     
 }
