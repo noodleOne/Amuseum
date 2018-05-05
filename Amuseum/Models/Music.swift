@@ -11,13 +11,13 @@ import Foundation
 struct Music: Media {
     
     // MARK: MediaProtocol Conformance Properties
-    var name: String
-    var genre: MusicGenre
-    var creationDate: Date
-    var entertainmentType: EntertainmentType
+    var name: String?
+    var genre: MusicGenre?
+    var creationDate: Date?
+    var entertainmentType: EntertainmentType?
     
     // MARK: - Additional Properties
-    var album: String
-    var artist: String
+    var album: String?
+    var artist: String?
     
 }

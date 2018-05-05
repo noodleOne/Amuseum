@@ -8,10 +8,7 @@
 
 import UIKit
 
-class FormTableViewCell: UITableViewCell, ViewModelBindable, FormTableViewCellConfigurable {
-    
-    // MARK: - View Model
-    var viewModel: FormTableViewCellViewModel!
+class FormTableViewCell: UITableViewCell, FormTableViewCellConfigurable {
     
     // MARK: - Outlets
     @IBOutlet weak var formTitleLabel: UILabel!
@@ -20,18 +17,37 @@ class FormTableViewCell: UITableViewCell, ViewModelBindable, FormTableViewCellCo
     // MARK: - Initializers
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupTextFieldTextObserving()
     }
     
-    // MARK: - View Model Binding
-    func bindViewModel() {
-        
+    private func setupTextFieldTextObserving() {
+        formTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
-    // MARK: - Configurable conformance
+    // MARK: - FormTableViewCellConfigurable
+    internal var key: String = ""
+    weak var delegate: FormTableViewCellDelegate?
+    
     func configure(with representable: FormTableViewCellRepresentable) {
         formTitleLabel.text = representable.formTitle
         formTitleLabel.font = representable.formTitleFont
         formTitleLabel.textColor = representable.formTitleColor
+        key = representable.key
+    }
+    
+    func assign(value: Any) {
+        guard let value = value as? String else { return }
+        formTextField.text = value
     }
 
+}
+
+// MARK: - Selectors
+extension FormTableViewCell {
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        delegate?.formValue(text, forKey: key)
+    }
+    
 }

@@ -20,7 +20,7 @@ class LoginViewController: UIViewController, ViewModelBindable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTextFieldDelegates()
+        setupTextFieldTextObserving()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -60,7 +60,7 @@ class LoginViewController: UIViewController, ViewModelBindable {
     }
     
     // MARK: - Initialization Helper Methods
-    private func setupTextFieldDelegates() {
+    private func setupTextFieldTextObserving() {
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }

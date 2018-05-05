@@ -26,11 +26,11 @@ extension HistoryCellViewModel: DefaultUITableViewCellRepresentable {
     }
     
     var title: String {
-        return model.name
+        return model.name ?? ""
     }
     
     var subtitle: String? {
-        return (model.genre.rawValue as! String)
+        return (model.genre?.rawValue as! String).capitalizingFirstLetter()
     }
     
     var titleColor: UIColor {

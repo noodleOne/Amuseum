@@ -10,22 +10,20 @@ import Foundation
 
 protocol MediaDetailsViewModelDatasource {
     
-    /*func numberOfSections() -> Int
+    func value(for key: String) -> Any
     
-    func numberOfItems(for section: Int) -> Int
-    
-    func cellViewModel(for indexPath: IndexPath) -> FormTableViewCellRepresentable*/
+    func setValue(_ value: Any, forKey key: String)
     
 }
 
 class MediaDetailsViewModel<Model: Media> {
     
     // MARK: - Properties
-    private let model: Model?
+    private var model: Model
     private let entertainmentType: EntertainmentType
     
     // MARK: - Initializer
-    init(model: Model?, entertainmentType: EntertainmentType) {
+    init(model: Model, entertainmentType: EntertainmentType) {
         self.model = model
         self.entertainmentType = entertainmentType
     }
@@ -35,16 +33,29 @@ class MediaDetailsViewModel<Model: Media> {
 // MARK: - MediaDetailsViewModelDatasource
 extension MediaDetailsViewModel: MediaDetailsViewModelDatasource {
     
-    /*func numberOfSections() -> Int {
-        return 1
+    func value(for key: String) -> Any {
+        guard let value = try? model.get(key: key) else {
+            return ""
+        }
+        if let caseValue = value as? Model.Genre {
+            return caseValue.rawValue
+        }
+        return value
     }
     
-    func numberOfItems(for section: Int) -> Int {
-        return rows.count
+    func setValue(_ value: Any, forKey key: String) {
+        do {
+            if let _ = try? model.get(key: key) as? Model.Genre, let value = value as? Model.Genre.RawValue {
+                guard let genre = Model.Genre.init(rawValue: value) else { return }
+                try model.set(value: genre, key: key)
+                print(genre)
+                return
+            }
+            try model.set(value: value, key: key)
+            print(value)
+        } catch {
+            print(error)
+        }
     }
-    
-    func cellViewModel(for indexPath: IndexPath) -> FormTableViewCellRepresentable {
-        return rows[indexPath.row]
-    }*/
     
 }

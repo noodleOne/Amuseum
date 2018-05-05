@@ -17,7 +17,7 @@ enum Scene {
     case history(EntertainmentType)
     // Can't declare second parameter to be of type Media since Media has an
     // associated value and can't be used. Best solution is to have as Any and cast to appropriate type
-    case mediaDetails(EntertainmentType, Any)
+    case mediaDetails(EntertainmentType, Any?)
     
     func viewController() -> UIViewController {
         switch self {

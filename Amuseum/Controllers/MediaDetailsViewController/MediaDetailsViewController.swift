@@ -8,10 +8,11 @@
 
 import UIKit
 
-class MediaDetailsViewController: UIViewController, ViewModelBindable, UITableViewDelegate, UITableViewDataSource {
+class MediaDetailsViewController: UIViewController, ViewModelBindable {
     
     // MARK: - Properties
     let rows: [FormTableViewCellRepresentable]
+    var valueForRow: [String: Any] = [:]
     
     // MARK: View Model
     var viewModel: MediaDetailsViewModelDatasource!
@@ -48,7 +49,11 @@ class MediaDetailsViewController: UIViewController, ViewModelBindable, UITableVi
         
     }
     
-    // MARK: UITableViewDelegate, UITableViewDatasource
+}
+
+// MARK: UITableViewDelegate, UITableViewDatasource
+extension MediaDetailsViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -60,8 +65,10 @@ class MediaDetailsViewController: UIViewController, ViewModelBindable, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = rows[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseIdentifier, for: indexPath)
-        if let configurable = cell as? FormTableViewCellConfigurable {
+        if var configurable = cell as? FormTableViewCellConfigurable {
             configurable.configure(with: row)
+            configurable.delegate = self
+            configurable.assign(value: viewModel.value(for: row.key))
         }
         return cell
     }
@@ -81,5 +88,15 @@ class MediaDetailsViewController: UIViewController, ViewModelBindable, UITableVi
         let row = rows[indexPath.row]
         return row.options != nil
     }
+    
+}
+
+// MAKR: - FormTableViewCellDelegate
+extension MediaDetailsViewController: FormTableViewCellDelegate {
+    
+    func formValue(_ value: Any, forKey key: String) {
+        viewModel.setValue(value, forKey: key)
+    }
+    
     
 }

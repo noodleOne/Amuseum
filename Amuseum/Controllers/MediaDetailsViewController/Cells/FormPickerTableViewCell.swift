@@ -8,11 +8,8 @@
 
 import UIKit
 
-class FormPickerTableViewCell: UITableViewCell, ViewModelBindable, FormTableViewCellConfigurable {
-    
-    // MARK: - View Model
-    var viewModel: FormPickerTableViewCellViewModel!
-    
+class FormPickerTableViewCell: UITableViewCell, FormTableViewCellConfigurable {
+
     // MARK: - Properties
     private var pickerRows: [String] = []
     
@@ -52,10 +49,9 @@ class FormPickerTableViewCell: UITableViewCell, ViewModelBindable, FormTableView
         }
     }
     
-    // MARK: - View Model Binding
-    func bindViewModel() {
-        
-    }
+    // MARK: - FormTableViewCellConfigurable
+    internal var key: String = ""
+    weak var delegate: FormTableViewCellDelegate?
     
     func configure(with representable: FormTableViewCellRepresentable) {
         formTitleLabel.text = representable.formTitle
@@ -65,8 +61,15 @@ class FormPickerTableViewCell: UITableViewCell, ViewModelBindable, FormTableView
         guard let options = representable.options else { return }
         pickerRows = options
         pickerView.reloadComponent(0)
+        let row = options.count / 2
+        pickerView.selectRow(row, inComponent: 0, animated: false)
+        key = representable.key
     }
     
+    func assign(value: Any) {
+        guard let value = value as? String else { return }
+        formValueLabel.text = value
+    }
 }
 
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
@@ -85,7 +88,9 @@ extension FormPickerTableViewCell: UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        formValueLabel.text = pickerRows[row]
+        let value = pickerRows[row]
+        formValueLabel.text = value
+        delegate?.formValue(value, forKey: key)
     }
     
 }

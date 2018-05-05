@@ -11,12 +11,12 @@ import Foundation
 struct Book: Media {
     
     // MARK: - Media Conformance
-    var name: String
-    var genre: BookGenre
-    var creationDate: Date
-    var entertainmentType: EntertainmentType
+    var name: String?
+    var genre: BookGenre?
+    var creationDate: Date?
+    var entertainmentType: EntertainmentType?
     
     // MARK: Additional Properties
-    var author: String
+    var author: String?
     
 }

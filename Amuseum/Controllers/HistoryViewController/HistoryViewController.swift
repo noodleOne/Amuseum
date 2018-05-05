@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController, ViewModelBindable, UITableViewDelegate, UITableViewDataSource {
+class HistoryViewController: UIViewController, ViewModelBindable {
     
     // MARK: - ViewModel
     var viewModel: HistoryViewModelDatasource!
@@ -19,9 +19,14 @@ class HistoryViewController: UIViewController, ViewModelBindable, UITableViewDel
             tableView.delegate = self
             tableView.dataSource = self 
             tableView.tableFooterView = UIView(frame: .zero)
-            tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.className)
         }
     }
+    
+    // MARK: - Private Views
+    private lazy var addButton: UIBarButtonItem = {
+        let barButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        return barButton
+    }()
     
     // MARK: - Initializers
     init() {
@@ -35,6 +40,18 @@ class HistoryViewController: UIViewController, ViewModelBindable, UITableViewDel
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBarButtonItems()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
+        tableView.deselectRow(at: selectedIndexPath, animated: true)
+    }
+    
+    // MARK: - Helper Methods
+    private func setupBarButtonItems() {
+        navigationItem.rightBarButtonItem = addButton
     }
     
     // MARK: - View Model Bindable Implementation
@@ -46,7 +63,20 @@ class HistoryViewController: UIViewController, ViewModelBindable, UITableViewDel
         }
     }
     
-    // MARK: - UITableViewDelegate, UITableViewDataSource
+}
+
+// MARK: - Selectors
+extension HistoryViewController {
+    
+    @objc private func addTapped() {
+        
+    }
+    
+}
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
+extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
     }
@@ -56,7 +86,7 @@ class HistoryViewController: UIViewController, ViewModelBindable, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.className, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.className) ?? UITableViewCell(style: .subtitle, reuseIdentifier: UITableViewCell.className)
         cell.configure(with: viewModel.cellViewModel(for: indexPath))
         return cell
     }
@@ -65,5 +95,6 @@ class HistoryViewController: UIViewController, ViewModelBindable, UITableViewDel
         let vc = viewModel.didSelectAction(for: indexPath)
         navigationController?.pushViewController(vc, animated: true)
     }
+
     
 }

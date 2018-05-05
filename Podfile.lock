@@ -71,12 +71,16 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
+  - Reflection (0.16.0)
+  - SwiftKVC (4.0.1):
+    - Reflection (~> 0.16.0)
 
 DEPENDENCIES:
   - CodableFirebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
+  - SwiftKVC
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -97,6 +101,8 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - Reflection
+    - SwiftKVC
 
 SPEC CHECKSUMS:
   BoringSSL: 60dd24df4af296bf41d78e5841dbb95d75f88c0d
@@ -116,7 +122,9 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  Reflection: 6c21d35bf5ac4a88f05187d1ca9c964c54e238c4
+  SwiftKVC: eb711a40be96d73949487f3b81c0e9268d015aee
 
-PODFILE CHECKSUM: 6120f3e441f560fd4c05753f2104533eb08a9dc2
+PODFILE CHECKSUM: ffc8859c7f5310f50eac1fe0b0bdde6a7f1d1ca3
 
 COCOAPODS: 1.5.0

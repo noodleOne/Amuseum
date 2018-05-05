@@ -11,12 +11,12 @@ import Foundation
 struct Movie: Media {
     
     // MARK: - MediaProtocol Conformance Properties
-    var name: String
-    var genre: MovieGenre
-    var creationDate: Date
-    var entertainmentType: EntertainmentType
+    var name: String?
+    var genre: MovieGenre?
+    var creationDate: Date?
+    var entertainmentType: EntertainmentType?
     
     // MARK: - Additional Properties
-    var favoriteActor: String
+    var favoriteActor: String?
     
 }

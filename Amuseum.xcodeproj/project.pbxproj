@@ -59,14 +59,13 @@
 		9994CFF4208E880F00440AC0 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9994CFF2208E880F00440AC0 /* HistoryViewController.xib */; };
 		9994CFF6208E885000440AC0 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994CFF5208E885000440AC0 /* HistoryViewModel.swift */; };
 		99B64180209CF0D4004147FB /* FormTableViewCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B6417F209CF0D4004147FB /* FormTableViewCellConfigurable.swift */; };
-		99DC0A0E209A6C1A00489658 /* FormTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC0A0D209A6C1A00489658 /* FormTableViewCellViewModel.swift */; };
-		99DC0A10209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC0A0F209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift */; };
 		99DC0A13209A6CF300489658 /* FormTableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC0A12209A6CF300489658 /* FormTableViewProvider.swift */; };
 		99DC0A15209ADDBE00489658 /* RepresentableConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC0A14209ADDBE00489658 /* RepresentableConfigurable.swift */; };
 		99DDE32D208A9D3B00098E17 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DDE32C208A9D3B00098E17 /* Scene.swift */; };
 		99DDE331208AA17600098E17 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DDE32F208AA17600098E17 /* HomeViewController.swift */; };
 		99DDE332208AA17600098E17 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DDE330208AA17600098E17 /* HomeViewController.xib */; };
 		99DDE334208AA1A500098E17 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DDE333208AA1A500098E17 /* HomeViewModel.swift */; };
+		99E30397209E139B00D1EBE7 /* FormTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E30396209E139B00D1EBE7 /* FormTableViewCellDelegate.swift */; };
 		99FC562A20950983007EFEBB /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC562920950983007EFEBB /* Book.swift */; };
 		99FC562C20950A73007EFEBB /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FC562B20950A73007EFEBB /* Article.swift */; };
 		99FE2AEB208EF19E007E834C /* MediaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FE2AEA208EF19E007E834C /* MediaObject.swift */; };
@@ -155,14 +154,13 @@
 		9994CFF2208E880F00440AC0 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 		9994CFF5208E885000440AC0 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		99B6417F209CF0D4004147FB /* FormTableViewCellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCellConfigurable.swift; sourceTree = "<group>"; };
-		99DC0A0D209A6C1A00489658 /* FormTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		99DC0A0F209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPickerTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		99DC0A12209A6CF300489658 /* FormTableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewProvider.swift; sourceTree = "<group>"; };
 		99DC0A14209ADDBE00489658 /* RepresentableConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableConfigurable.swift; sourceTree = "<group>"; };
 		99DDE32C208A9D3B00098E17 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		99DDE32F208AA17600098E17 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		99DDE330208AA17600098E17 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		99DDE333208AA1A500098E17 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		99E30396209E139B00D1EBE7 /* FormTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		99F0E37320904FAE00CC1797 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		99FC562920950983007EFEBB /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		99FC562B20950A73007EFEBB /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -247,7 +245,6 @@
 				9914C048209A33AA009BA97E /* FormTableViewCell.swift */,
 				9914C049209A33AA009BA97E /* FormTableViewCell.xib */,
 				9914C053209A6505009BA97E /* Protocol */,
-				99DC0A0C209A6C0000489658 /* ViewModels */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -257,6 +254,7 @@
 			children = (
 				9914C054209A651B009BA97E /* FormTableViewCellRepresentable.swift */,
 				99B6417F209CF0D4004147FB /* FormTableViewCellConfigurable.swift */,
+				99E30396209E139B00D1EBE7 /* FormTableViewCellDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -507,15 +505,6 @@
 			path = HistoryViewController;
 			sourceTree = "<group>";
 		};
-		99DC0A0C209A6C0000489658 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				99DC0A0D209A6C1A00489658 /* FormTableViewCellViewModel.swift */,
-				99DC0A0F209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		99DC0A11209A6CE400489658 /* TableViewProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -761,6 +750,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Reflection/Reflection.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKVC/SwiftKVC.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -775,6 +766,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reflection.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKVC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -802,7 +795,6 @@
 				99FE2AEB208EF19E007E834C /* MediaObject.swift in Sources */,
 				9914C045209A3352009BA97E /* MediaDetailsViewController.swift in Sources */,
 				99697950208B2F9900844FD7 /* DefaultUITableViewCellRepresentable.swift in Sources */,
-				99DC0A0E209A6C1A00489658 /* FormTableViewCellViewModel.swift in Sources */,
 				992C2EBC208A892D00B4C4F6 /* StringExtensions.swift in Sources */,
 				9914C051209A364F009BA97E /* MediaDetailsViewModel.swift in Sources */,
 				99DDE32D208A9D3B00098E17 /* Scene.swift in Sources */,
@@ -827,7 +819,6 @@
 				99DC0A13209A6CF300489658 /* FormTableViewProvider.swift in Sources */,
 				99DDE331208AA17600098E17 /* HomeViewController.swift in Sources */,
 				9969794A208B2CC100844FD7 /* EntertainmentType.swift in Sources */,
-				99DC0A10209A6C2D00489658 /* FormPickerTableViewCellViewModel.swift in Sources */,
 				99DC0A15209ADDBE00489658 /* RepresentableConfigurable.swift in Sources */,
 				9926BAF0208B4AC0002C0FB7 /* SplashViewModel.swift in Sources */,
 				9969795C208B3FC700844FD7 /* RegistrationViewController.swift in Sources */,
@@ -840,6 +831,7 @@
 				99697942208B2A7F00844FD7 /* RawRepresentableExtension.swift in Sources */,
 				991F15242095B2ED00C1C662 /* Document.swift in Sources */,
 				9914C04E209A34B4009BA97E /* FormPickerTableViewCell.swift in Sources */,
+				99E30397209E139B00D1EBE7 /* FormTableViewCellDelegate.swift in Sources */,
 				992C2EB3208A728E00B4C4F6 /* ViewModelBindable.swift in Sources */,
 				99FE2AED208EF1DF007E834C /* MovieGenre.swift in Sources */,
 				992C2EAF208A6F9C00B4C4F6 /* LoginViewModel.swift in Sources */,

@@ -10,6 +10,9 @@ import UIKit
 
 protocol FormTableViewCellRepresentable {
     
+    /// The key the form represents
+    var key: String { get }
+    
     /// The title of the input the user will insert
     var formTitle: String { get }
     

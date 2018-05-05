@@ -28,6 +28,21 @@ struct FormTableViewProvider {
         }
     }
     
+    func getKeys() -> [String] {
+        switch entertainmentType {
+        case .movie:
+            return MovieRows.allValues
+        case .series:
+            return MovieRows.allValues
+        case .music:
+            return MusicRows.allValues
+        case .books:
+            return BookRows.allValues
+        case .articles:
+            return ArticleRows.allValues
+        }
+    }
+    
     
 }
 
@@ -37,8 +52,17 @@ private enum MovieRows: String, FormTableViewCellRepresentable {
     case genre
     case favoriteActor
     
+    var key: String {
+        return self.rawValue
+    }
+    
     var formTitle: String {
-        return self.rawValue.capitalizingFirstLetter()
+        switch self {
+        case .favoriteActor:
+            return "Favorite Actor"
+        default:
+            return self.rawValue.capitalizingFirstLetter()
+        }
     }
     
     var formTitleFont: UIFont {
@@ -79,6 +103,10 @@ private enum MusicRows: String, FormTableViewCellRepresentable {
     case genre
     case album
     case artist
+    
+    var key: String {
+        return self.rawValue
+    }
     
     var formTitle: String {
         return self.rawValue.capitalizingFirstLetter()
@@ -122,6 +150,10 @@ private enum BookRows: String, FormTableViewCellRepresentable {
     case name
     case genre
     case author
+    
+    var key: String {
+        return self.rawValue
+    }
     
     var formTitle: String {
         return self.rawValue.capitalizingFirstLetter()
@@ -167,6 +199,10 @@ private enum ArticleRows: String, FormTableViewCellRepresentable {
     case author
     case source
     case publishedDate
+    
+    var key: String {
+        return self.rawValue
+    }
     
     var formTitle: String {
         return self.rawValue.capitalizingFirstLetter()

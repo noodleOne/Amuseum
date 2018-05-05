@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import SwiftKVC
 
-protocol Media: Codable {
+protocol Media: Codable, Value {
     
-    associatedtype Genre: (RawRepresentable & Codable)
+    associatedtype Genre: (RawRepresentable)
     
-    var name: String { get set }
-    var genre: Genre { get set }
-    var creationDate: Date { get set }
-    var entertainmentType: EntertainmentType { get set }
+    var name: String? { get set }
+    var genre: Genre? { get set }
+    var creationDate: Date? { get set }
+    var entertainmentType: EntertainmentType? { get set }
     
 }

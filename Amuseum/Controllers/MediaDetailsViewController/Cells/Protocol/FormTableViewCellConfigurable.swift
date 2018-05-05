@@ -10,10 +10,15 @@ import Foundation
 
 protocol FormTableViewCellConfigurable {
     
-    /// Helper function to configure a view with the properties
+    var key: String { get set }
+    var delegate: FormTableViewCellDelegate? { get set }
+    
+    /// Helper function to configure the form view with the properties
     /// of the representable
     ///
     /// - Parameter representable: The Representable
     func configure(with representable: FormTableViewCellRepresentable)
+    
+    func assign(value: Any)
     
 }

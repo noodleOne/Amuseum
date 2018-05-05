@@ -21,6 +21,8 @@ extension UITableViewCell: UITableViewCellRepresentableConfigurable {
         textLabel?.text = defaultRepresentable.title
         accessoryType = defaultRepresentable.accessoryType
         backgroundColor = defaultRepresentable.backgroundColor
+        detailTextLabel?.text = defaultRepresentable.subtitle
+        detailTextLabel?.textColor = defaultRepresentable.subtitleColor
     }
     
 }
