@@ -10,6 +10,12 @@ import UIKit
 
 class MediaDetailsViewController: UIViewController, ViewModelBindable {
     
+    // MARK: - Views
+    private let saveBarButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTapped))
+        return barButtonItem
+    }()
+    
     // MARK: - Properties
     let rows: [FormTableViewCellRepresentable]
     var valueForRow: [String: Any] = [:]
@@ -42,6 +48,7 @@ class MediaDetailsViewController: UIViewController, ViewModelBindable {
     // MARK: - ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = saveBarButtonItem
     }
 
     // MARK: - View Model Binding
@@ -98,5 +105,15 @@ extension MediaDetailsViewController: FormTableViewCellDelegate {
         viewModel.setValue(value, forKey: key)
     }
     
+}
+
+// MARK: - Selectors
+extension MediaDetailsViewController {
+    
+    @objc private func saveTapped() {
+        viewModel.save { (success) in
+            print("Success: ", success)
+        }
+    }
     
 }

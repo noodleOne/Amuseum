@@ -6,9 +6,15 @@
 //  Copyright © 2018 Serj Agopian. All rights reserved.
 //
 
+import Firebase
 import Foundation
+import CodableFirebase
 
 protocol MediaDetailsViewModelDatasource {
+    
+    typealias SaveHandler = ((_ success: Bool) -> Void)?
+    
+    func save(completion: SaveHandler)
     
     func value(for key: String) -> Any
     
@@ -22,6 +28,9 @@ class MediaDetailsViewModel<Model: Media> {
     private var model: Model
     private let entertainmentType: EntertainmentType
     
+    // MARK: - Firebase
+    private lazy var mediaCollection = Firestore.firestore().collection(FirebaseManager.CollectionNames.media.name)
+    
     // MARK: - Initializer
     init(model: Model, entertainmentType: EntertainmentType) {
         self.model = model
@@ -32,6 +41,26 @@ class MediaDetailsViewModel<Model: Media> {
 
 // MARK: - MediaDetailsViewModelDatasource
 extension MediaDetailsViewModel: MediaDetailsViewModelDatasource {
+    
+    func save(completion: MediaDetailsViewModelDatasource.SaveHandler) {
+        model.creationDate = Date()
+        let encoder = FirestoreEncoder()
+        guard let data = try? encoder.encode(model) else {
+            completion?(false)
+            return
+        }
+        guard let dict = data as? [String: Any] else {
+            completion?(false)
+            return
+        }
+        mediaCollection.addDocument(data: dict) { (error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            completion?(true)
+        }
+    }
     
     func value(for key: String) -> Any {
         guard let value = try? model.get(key: key) else {
@@ -45,8 +74,7 @@ extension MediaDetailsViewModel: MediaDetailsViewModelDatasource {
     
     func setValue(_ value: Any, forKey key: String) {
         do {
-            if let _ = try? model.get(key: key) as? Model.Genre, let value = value as? Model.Genre.RawValue {
-                guard let genre = Model.Genre.init(rawValue: value) else { return }
+            if let rawValue = value as? Model.Genre.RawValue, let genre = Model.Genre.init(rawValue: rawValue) {
                 try model.set(value: genre, key: key)
                 print(genre)
                 return

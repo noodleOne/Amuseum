@@ -22,6 +22,8 @@ protocol HistoryViewModelDatasource: HistoryViewModelOutput {
     
     func didSelectAction(for indexPath: IndexPath) -> UIViewController
     
+    func addTapped() -> UIViewController
+    
 }
 
 /// Protocol that provides the outputs to the HistoryViewController
@@ -30,6 +32,7 @@ protocol HistoryViewModelOutput {
     typealias DataUpdates = ((_ addedIndexes: [IndexPath]?, _ modifiedIndexes: [IndexPath]?, _ removedIndexes: [IndexPath]?) -> Void)?
     
     var dataUpdates: DataUpdates { get set }
+
 }
 
 class HistoryViewModel<Model:Media>: HistoryViewModelDatasource {
@@ -70,7 +73,7 @@ class HistoryViewModel<Model:Media>: HistoryViewModelDatasource {
             querySnapshot.documentChanges.forEach({ (change) in
                 switch change.type {
                 case .added:
-                    self.insertHistoryCellViewModel(withSnapshot: change.document, at: Int(change.newIndex))
+                    guard self.insertHistoryCellViewModel(withSnapshot: change.document, at: Int(change.newIndex)) else { return }
                     self.dataUpdates?([IndexPath(row: Int(change.newIndex), section: 0)], nil, nil)
                     print("Added")
                 case .modified:
@@ -84,9 +87,10 @@ class HistoryViewModel<Model:Media>: HistoryViewModelDatasource {
         }
     }
     
-    private func insertHistoryCellViewModel(withSnapshot queryDocumentSnapshot: QueryDocumentSnapshot, at index: Int) {
-        guard let media = try? FirestoreDecoder().decode(Model.self, from: queryDocumentSnapshot.data()) else { return }
+    private func insertHistoryCellViewModel(withSnapshot queryDocumentSnapshot: QueryDocumentSnapshot, at index: Int) -> Bool {
+        guard let media = try? FirestoreDecoder().decode(Model.self, from: queryDocumentSnapshot.data()) else { return false }
         cellViewModels.insert(HistoryCellViewModel(model: media), at: index)
+        return true
     }
     
 }
@@ -108,6 +112,10 @@ extension HistoryViewModel {
     
     func didSelectAction(for indexPath: IndexPath) -> UIViewController {
         return Scene.mediaDetails(entertainmentType, cellViewModels[indexPath.row].model).viewController()
+    }
+    
+    func addTapped() -> UIViewController {
+        return Scene.mediaDetails(entertainmentType, nil).viewController()
     }
     
 }

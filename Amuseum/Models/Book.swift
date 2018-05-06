@@ -20,3 +20,11 @@ struct Book: Media {
     var author: String?
     
 }
+
+extension Book {
+    
+    init(entertainmentType: EntertainmentType) {
+        self.entertainmentType = entertainmentType
+    }
+    
+}

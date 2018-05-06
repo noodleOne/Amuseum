@@ -60,21 +60,37 @@ enum Scene {
             var vc = MediaDetailsViewController(rows: FormTableViewProvider(entertainmentType: entertainmentType).getRows())
             switch entertainmentType {
             case .movie, .series:
+                guard let model = model else {
+                    vc.bind(to: MediaDetailsViewModel<Movie>(model: Movie(entertainmentType: entertainmentType), entertainmentType: entertainmentType))
+                    return vc
+                }
                 guard let movie = model as? Movie else {
                     fatalError("Didn't pass a movie object while trying to instantiate movie MediaDetailsViewController")
                 }
                 vc.bind(to: MediaDetailsViewModel<Movie>(model: movie, entertainmentType: entertainmentType))
             case .music:
+                guard let model = model else {
+                    vc.bind(to: MediaDetailsViewModel<Music>(model: Music(entertainmentType: entertainmentType), entertainmentType: entertainmentType))
+                    return vc
+                }
                 guard let music = model as? Music else {
                     fatalError("Didn't pass a Music object while trying to instantiate Music MediaDetailsViewController")
                 }
                 vc.bind(to: MediaDetailsViewModel<Music>(model: music, entertainmentType: entertainmentType))
             case .books:
+                guard let model = model else {
+                    vc.bind(to: MediaDetailsViewModel<Book>(model: Book(entertainmentType: entertainmentType), entertainmentType: entertainmentType))
+                    return vc
+                }
                 guard let book = model as? Book else {
                     fatalError("Didn't pass a Book object while trying to instantiate Book MediaDetailsViewController")
                 }
                 vc.bind(to: MediaDetailsViewModel<Book>(model: book, entertainmentType: entertainmentType))
             case .articles:
+                guard let model = model else {
+                    vc.bind(to: MediaDetailsViewModel<Article>(model: Article(entertainmentType: entertainmentType), entertainmentType: entertainmentType))
+                    return vc
+                }
                 guard let article = model as? Article else {
                     fatalError("Didn't pass a Article object while trying to instantiate Article MediaDetailsViewController")
                 }

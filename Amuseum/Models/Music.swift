@@ -21,3 +21,11 @@ struct Music: Media {
     var artist: String?
     
 }
+
+extension Music {
+    
+    init(entertainmentType: EntertainmentType) {
+        self.entertainmentType = entertainmentType
+    }
+    
+}

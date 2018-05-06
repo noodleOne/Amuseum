@@ -22,3 +22,11 @@ struct Article: Media {
     var publishedDate: Date?
     
 }
+
+extension Article {
+    
+    init(entertainmentType: EntertainmentType) {
+        self.entertainmentType = entertainmentType
+    }
+    
+}

@@ -20,3 +20,11 @@ struct Movie: Media {
     var favoriteActor: String?
     
 }
+
+extension Movie {
+    
+    init(entertainmentType: EntertainmentType) {
+        self.entertainmentType = entertainmentType
+    }
+    
+}

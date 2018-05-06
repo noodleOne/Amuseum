@@ -69,7 +69,8 @@ class HistoryViewController: UIViewController, ViewModelBindable {
 extension HistoryViewController {
     
     @objc private func addTapped() {
-        
+        let vc = viewModel.addTapped()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
