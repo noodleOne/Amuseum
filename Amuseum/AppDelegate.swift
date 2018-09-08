@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,18 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Setup Initial Controller
-        
-        let splashViewController = Scene.splash.viewController()
-        window?.rootViewController = splashViewController
-        window?.makeKeyAndVisible()
-        
+        // Setup firebase
         FirebaseApp.configure()
+        
         // Configure to not break new date implementation
         let db = Firestore.firestore()
         let settings = db.settings
-        settings.areTimestampsInSnapshotsEnabled = false
+        settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
+        
+        // Setup Initial Controller
+        let splashViewController = Scene.splash.viewController()
+        window?.rootViewController = splashViewController
+        window?.makeKeyAndVisible()
         
         return true
     }

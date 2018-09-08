@@ -9,6 +9,7 @@
 import Firebase
 import Foundation
 import CodableFirebase
+import FirebaseFirestore
 
 protocol MediaDetailsViewModelDatasource {
     
@@ -43,17 +44,13 @@ class MediaDetailsViewModel<Model: Media> {
 extension MediaDetailsViewModel: MediaDetailsViewModelDatasource {
     
     func save(completion: MediaDetailsViewModelDatasource.SaveHandler) {
-        model.creationDate = Date()
+        model.creationDate = Timestamp(date: Date())
         let encoder = FirestoreEncoder()
         guard let data = try? encoder.encode(model) else {
             completion?(false)
             return
         }
-        guard let dict = data as? [String: Any] else {
-            completion?(false)
-            return
-        }
-        mediaCollection.addDocument(data: dict) { (error) in
+        mediaCollection.addDocument(data: data) { (error) in
             if let error = error {
                 print(error)
                 return
@@ -73,14 +70,18 @@ extension MediaDetailsViewModel: MediaDetailsViewModelDatasource {
     }
     
     func setValue(_ value: Any, forKey key: String) {
+        var anyValue = value
         do {
-            if let rawValue = value as? Model.Genre.RawValue, let genre = Model.Genre.init(rawValue: rawValue) {
+            if let rawValue = anyValue as? Model.Genre.RawValue, let genre = Model.Genre.init(rawValue: rawValue) {
                 try model.set(value: genre, key: key)
                 print(genre)
                 return
             }
-            try model.set(value: value, key: key)
-            print(value)
+            if let date = anyValue as? Date {
+                anyValue = Timestamp(date: date)
+            }
+            try model.set(value: anyValue, key: key)
+            print(anyValue)
         } catch {
             print(error)
         }

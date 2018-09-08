@@ -225,8 +225,7 @@ private enum ArticleRows: String, FormTableViewCellRepresentable {
         case .name, .author, .source, .publishedDate:
             return nil
         case .genre:
-            return ArticleRows
-                .allValues
+            return BookGenre.allValues
         }
     }
     

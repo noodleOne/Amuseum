@@ -8,6 +8,10 @@
 
 import Foundation
 import SwiftKVC
+import FirebaseFirestore
+import CodableFirebase
+
+extension Timestamp: TimestampType { }
 
 protocol Media: Codable, Value {
     
@@ -15,7 +19,7 @@ protocol Media: Codable, Value {
     
     var name: String? { get set }
     var genre: Genre? { get set }
-    var creationDate: Date? { get set }
+    var creationDate: Timestamp? { get set }
     var entertainmentType: EntertainmentType? { get set }
     
 }

@@ -7,19 +7,20 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 struct Article: Media {
     
     // MARK: - MediaProtocol Conformance Properties
     var name: String?
     var genre: BookGenre?
-    var creationDate: Date?
+    var creationDate: Timestamp?
     var entertainmentType: EntertainmentType?
     
     // MARK: - Additional Properties
     var author: String?
     var source: String?
-    var publishedDate: Date?
+    var publishedDate: Timestamp?
     
 }
 

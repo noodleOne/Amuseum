@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 struct Book: Media {
     
     // MARK: - Media Conformance
     var name: String?
     var genre: BookGenre?
-    var creationDate: Date?
+    var creationDate: Timestamp?
     var entertainmentType: EntertainmentType?
     
     // MARK: Additional Properties

@@ -18,6 +18,7 @@ class RegistrationViewController: UIViewController, ViewModelBindable {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    // MARK: - ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFieldDelegates()
@@ -25,9 +26,11 @@ class RegistrationViewController: UIViewController, ViewModelBindable {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // Workaround for the dismiss tap for the PartialCurl
         removePartialCurlTap()
     }
     
+    // MARK: - Controller Overrides
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -52,17 +55,16 @@ class RegistrationViewController: UIViewController, ViewModelBindable {
                 self.registerButton.isEnabled = true
             case .registering:
                 self.registerButton.isEnabled = false
-                self.setTextFields(false)
+                self.setTextFieldsEnabled(false)
             case .registered:
                 self.present(Scene.home.viewController(), animated: true, completion: nil)
                 break
             case .error(let error):
-                self.setTextFields(true)
+                self.setTextFieldsEnabled(true)
                 self.registerButton.isEnabled = true
                 UIAlertController.init(error: error).showAlert()
             }
         }
-        
     }
     
     // MARK: - Initialization Helper Methods
@@ -72,15 +74,14 @@ class RegistrationViewController: UIViewController, ViewModelBindable {
     }
     
     private func removePartialCurlTap() {
-        if let gestures = self.view.gestureRecognizers as? [UIGestureRecognizer] {
+        if let gestures = self.view.gestureRecognizers {
             for gesture in gestures {
                 self.view.removeGestureRecognizer(gesture)
             }
         }
     }
     
-    // MARK: - Helper Methods
-    private func setTextFields(_ enabled: Bool) {
+    private func setTextFieldsEnabled(_ enabled: Bool) {
         self.emailTextField.isEnabled = enabled
         self.passwordTextField.isEnabled = enabled
     }
@@ -95,7 +96,7 @@ class RegistrationViewController: UIViewController, ViewModelBindable {
     }
 }
 
-// MARK: - UITextFieldDelegate
+// MARK: - Selectors
 extension RegistrationViewController {
     
     @objc private func textFieldDidChange(_ textField: UITextField) {

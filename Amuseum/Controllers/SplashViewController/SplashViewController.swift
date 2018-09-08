@@ -19,23 +19,24 @@ class SplashViewController: UIViewController, ViewModelBindable {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.checkUserState { [unowned self] (state) in
-            var vc: UIViewController
-            switch state {
-            case .loggedOut:
-                vc = Scene.login.viewController()
-            case .loggedIn:
-                vc = Scene.home.viewController()
-            case .error(let error):
-                vc = Scene.login.viewController()
-                UIAlertController(error: error).showAlert()
-            }
-            self.present(vc, animated: true, completion: nil)
-        }
     }
     
     func bindViewModel() {
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.viewModel.checkUserState { [unowned self] (state) in
+                var vc: UIViewController
+                switch state {
+                case .loggedOut:
+                    vc = Scene.login.viewController()
+                case .loggedIn:
+                    vc = Scene.home.viewController()
+                case .error(let error):
+                    vc = Scene.login.viewController()
+                    UIAlertController(error: error).showAlert()
+                }
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
     }
     
 }
